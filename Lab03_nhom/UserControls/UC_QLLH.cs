@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Lab03_nhom.UserControls
 {
@@ -135,8 +135,8 @@ namespace Lab03_nhom.UserControls
 
         }
 
-        private void buttonTailai_Click(object sender, EventArgs e)
-        {
+        private void buttonTaiLai_Click(object sender, EventArgs e)
+        { 
             dataGridViewQLLH_data();
         }
 
@@ -193,7 +193,7 @@ namespace Lab03_nhom.UserControls
 
 
 
-        private void dGVSinhVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridViewQLLH_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1) return;
             DataGridViewRow dataGridViewRow = dataGridViewQLLH.Rows[e.RowIndex];
@@ -203,5 +203,6 @@ namespace Lab03_nhom.UserControls
             CBNhanVien.Text = dataGridViewRow.Cells[2].Value.ToString();
         }
 
+         
     }
 }

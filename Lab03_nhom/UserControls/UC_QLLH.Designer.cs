@@ -109,6 +109,7 @@
             this.buttonThem.TabIndex = 6;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // buttonSua
             // 
@@ -119,6 +120,7 @@
             this.buttonSua.TabIndex = 7;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonXoa
             // 
@@ -139,6 +141,7 @@
             this.buttonTaiLai.TabIndex = 10;
             this.buttonTaiLai.Text = "Tải lại";
             this.buttonTaiLai.UseVisualStyleBackColor = true;
+            this.buttonTaiLai.Click += new System.EventHandler(this.buttonTaiLai_Click);
             // 
             // dataGridViewQLLH
             // 
@@ -156,24 +159,31 @@
             this.dataGridViewQLLH.RowTemplate.Height = 32;
             this.dataGridViewQLLH.Size = new System.Drawing.Size(880, 338);
             this.dataGridViewQLLH.TabIndex = 11;
+            this.dataGridViewQLLH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseClick);
             // 
             // MALOP
             // 
             this.MALOP.HeaderText = "Mã lớp";
             this.MALOP.MinimumWidth = 6;
+            this.MALOP.DataPropertyName = "MALOP";
             this.MALOP.Name = "MALOP";
+            this.MALOP.ReadOnly = true;
             // 
             // TENLOP
             // 
+            this.TENLOP.DataPropertyName = "TENLOP";
             this.TENLOP.HeaderText = "Tên lớp";
             this.TENLOP.MinimumWidth = 6;
             this.TENLOP.Name = "TENLOP";
+            this.TENLOP.ReadOnly = true;
             // 
             // HOTEN
             // 
             this.HOTEN.HeaderText = "Tên nhân viên";
             this.HOTEN.MinimumWidth = 6;
+            this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
             // 
             // UC_QLLH
             // 
@@ -193,6 +203,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_QLLH";
             this.Size = new System.Drawing.Size(880, 438);
+            this.Load += new System.EventHandler(this.dGVSinhVien_load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLLH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
