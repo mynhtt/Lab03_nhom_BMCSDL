@@ -20,5 +20,7 @@ namespace Lab03_nhom.UserControls
             NhapDiem fNhapDiem = new NhapDiem();
             fNhapDiem.Show();
         }
+
+        
     }
 }

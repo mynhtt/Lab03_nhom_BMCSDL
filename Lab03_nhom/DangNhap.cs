@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Lab03_nhom.UserControls;
+
 namespace Lab03_nhom
 {
     public partial class DangNhap : Form
@@ -65,7 +67,7 @@ namespace Lab03_nhom
                     string MANV = kq_NV[1].ToString();
 
                     MessageBox.Show("Đăng nhập thành công tài khoản nhân viên " + kq_NV[0], "Thông Báo");
-                    Form1 frmManagerStudent = new Form1();
+                    Form1 frmManagerStudent = new Form1(); 
                     //= new frmManagerClass(MANV, MatKhau); 
                     this.Hide();
                     frmManagerStudent.ShowDialog();
@@ -92,5 +94,7 @@ namespace Lab03_nhom
         {
             this.Close();
         }
+
+        
     }
 }
