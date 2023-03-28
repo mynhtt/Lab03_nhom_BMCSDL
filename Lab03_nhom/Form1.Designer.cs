@@ -49,8 +49,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1131, 71);
+            this.panel1.Size = new System.Drawing.Size(880, 46);
             this.panel1.TabIndex = 0;
             // 
             // iconButtonExit
@@ -61,9 +62,10 @@
             this.iconButtonExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.iconButtonExit.IconColor = System.Drawing.Color.White;
             this.iconButtonExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonExit.Location = new System.Drawing.Point(1041, 0);
+            this.iconButtonExit.Location = new System.Drawing.Point(810, 0);
+            this.iconButtonExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonExit.Name = "iconButtonExit";
-            this.iconButtonExit.Size = new System.Drawing.Size(90, 71);
+            this.iconButtonExit.Size = new System.Drawing.Size(70, 46);
             this.iconButtonExit.TabIndex = 3;
             this.iconButtonExit.UseVisualStyleBackColor = true;
             this.iconButtonExit.Click += new System.EventHandler(this.iconButtonExit_Click);
@@ -75,9 +77,10 @@
             this.buttonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTrangChu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonTrangChu.ForeColor = System.Drawing.Color.White;
-            this.buttonTrangChu.Location = new System.Drawing.Point(197, 0);
+            this.buttonTrangChu.Location = new System.Drawing.Point(153, 0);
+            this.buttonTrangChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTrangChu.Name = "buttonTrangChu";
-            this.buttonTrangChu.Size = new System.Drawing.Size(196, 71);
+            this.buttonTrangChu.Size = new System.Drawing.Size(152, 46);
             this.buttonTrangChu.TabIndex = 2;
             this.buttonTrangChu.Text = "Trang chủ";
             this.buttonTrangChu.UseVisualStyleBackColor = false;
@@ -90,9 +93,10 @@
             this.buttonQLSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQLSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonQLSV.ForeColor = System.Drawing.Color.White;
-            this.buttonQLSV.Location = new System.Drawing.Point(601, 0);
+            this.buttonQLSV.Location = new System.Drawing.Point(467, 0);
+            this.buttonQLSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonQLSV.Name = "buttonQLSV";
-            this.buttonQLSV.Size = new System.Drawing.Size(196, 71);
+            this.buttonQLSV.Size = new System.Drawing.Size(152, 46);
             this.buttonQLSV.TabIndex = 1;
             this.buttonQLSV.Text = "Quản lý sinh viên";
             this.buttonQLSV.UseVisualStyleBackColor = false;
@@ -103,9 +107,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(53, 18);
+            this.label1.Location = new System.Drawing.Point(41, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 30);
+            this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "BOBA";
             // 
@@ -116,9 +121,10 @@
             this.buttonQLLH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQLLH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonQLLH.ForeColor = System.Drawing.Color.White;
-            this.buttonQLLH.Location = new System.Drawing.Point(399, 0);
+            this.buttonQLLH.Location = new System.Drawing.Point(310, 0);
+            this.buttonQLLH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonQLLH.Name = "buttonQLLH";
-            this.buttonQLLH.Size = new System.Drawing.Size(196, 71);
+            this.buttonQLLH.Size = new System.Drawing.Size(152, 46);
             this.buttonQLLH.TabIndex = 0;
             this.buttonQLLH.Text = "Quản lý lớp học";
             this.buttonQLLH.UseVisualStyleBackColor = false;
@@ -127,20 +133,23 @@
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 71);
+            this.panelContainer.Location = new System.Drawing.Point(0, 46);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1131, 671);
+            this.panelContainer.Size = new System.Drawing.Size(880, 438);
             this.panelContainer.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 742);
+            this.ClientSize = new System.Drawing.Size(880, 484);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
