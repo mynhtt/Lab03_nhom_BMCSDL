@@ -34,19 +34,19 @@
             this.labelMaSV = new System.Windows.Forms.Label();
             this.labelSinhVien = new System.Windows.Forms.Label();
             this.labelDiem = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBmaSV = new System.Windows.Forms.TextBox();
+            this.TBtenSV = new System.Windows.Forms.TextBox();
+            this.TBdiem = new System.Windows.Forms.TextBox();
             this.buttonThem = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonLưu = new System.Windows.Forms.Button();
             this.buttonHuy = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDiem = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 52);
             this.panel1.TabIndex = 0;
@@ -69,7 +69,7 @@
             this.iconButtonExit.IconColor = System.Drawing.Color.White;
             this.iconButtonExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonExit.Location = new System.Drawing.Point(643, 10);
-            this.iconButtonExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonExit.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonExit.Name = "iconButtonExit";
             this.iconButtonExit.Size = new System.Drawing.Size(70, 33);
             this.iconButtonExit.TabIndex = 4;
@@ -118,34 +118,34 @@
             this.labelDiem.TabIndex = 3;
             this.labelDiem.Text = "Điểm:";
             // 
-            // textBox1
+            // TBmaSV
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 62);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 23);
-            this.textBox1.TabIndex = 4;
+            this.TBmaSV.Location = new System.Drawing.Point(156, 62);
+            this.TBmaSV.Margin = new System.Windows.Forms.Padding(2);
+            this.TBmaSV.Name = "TBmaSV";
+            this.TBmaSV.Size = new System.Drawing.Size(174, 23);
+            this.TBmaSV.TabIndex = 4;
             // 
-            // textBox2
+            // TBtenSV
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 95);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 23);
-            this.textBox2.TabIndex = 5;
+            this.TBtenSV.Location = new System.Drawing.Point(156, 95);
+            this.TBtenSV.Margin = new System.Windows.Forms.Padding(2);
+            this.TBtenSV.Name = "TBtenSV";
+            this.TBtenSV.Size = new System.Drawing.Size(174, 23);
+            this.TBtenSV.TabIndex = 5;
             // 
-            // textBox3
+            // TBdiem
             // 
-            this.textBox3.Location = new System.Drawing.Point(156, 127);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 23);
-            this.textBox3.TabIndex = 6;
+            this.TBdiem.Location = new System.Drawing.Point(156, 127);
+            this.TBdiem.Margin = new System.Windows.Forms.Padding(2);
+            this.TBdiem.Name = "TBdiem";
+            this.TBdiem.Size = new System.Drawing.Size(174, 23);
+            this.TBdiem.TabIndex = 6;
             // 
             // buttonThem
             // 
             this.buttonThem.Location = new System.Drawing.Point(440, 72);
-            this.buttonThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonThem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(73, 19);
             this.buttonThem.TabIndex = 7;
@@ -155,7 +155,7 @@
             // buttonSua
             // 
             this.buttonSua.Location = new System.Drawing.Point(569, 72);
-            this.buttonSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(73, 19);
             this.buttonSua.TabIndex = 8;
@@ -165,7 +165,7 @@
             // buttonLưu
             // 
             this.buttonLưu.Location = new System.Drawing.Point(440, 123);
-            this.buttonLưu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLưu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLưu.Name = "buttonLưu";
             this.buttonLưu.Size = new System.Drawing.Size(73, 19);
             this.buttonLưu.TabIndex = 9;
@@ -175,73 +175,81 @@
             // buttonHuy
             // 
             this.buttonHuy.Location = new System.Drawing.Point(569, 123);
-            this.buttonHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonHuy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(73, 19);
             this.buttonHuy.TabIndex = 10;
             this.buttonHuy.Text = "Hủy";
             this.buttonHuy.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewDiem
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
             this.HoTen,
             this.Diem});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 168);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 32;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 199);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridViewDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewDiem.Location = new System.Drawing.Point(0, 168);
+            this.dataGridViewDiem.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewDiem.Name = "dataGridViewDiem";
+            this.dataGridViewDiem.RowHeadersWidth = 51;
+            this.dataGridViewDiem.RowTemplate.Height = 32;
+            this.dataGridViewDiem.Size = new System.Drawing.Size(716, 199);
+            this.dataGridViewDiem.TabIndex = 11;
+            this.dataGridViewDiem.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewDiem_CellMouseClick);
             // 
             // MaSV
             // 
             this.MaSV.HeaderText = "Mã sinh viên";
             this.MaSV.MinimumWidth = 6;
             this.MaSV.Name = "MaSV";
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.ReadOnly = true;
             // 
             // HoTen
             // 
             this.HoTen.HeaderText = "Họ tên";
             this.HoTen.MinimumWidth = 6;
             this.HoTen.Name = "HoTen";
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.ReadOnly = true;
             // 
             // Diem
             // 
             this.Diem.HeaderText = "Điểm";
             this.Diem.MinimumWidth = 6;
             this.Diem.Name = "Diem";
+            this.Diem.DataPropertyName = "Diem";
+            this.Diem.ReadOnly = true;
             // 
             // NhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 367);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDiem);
             this.Controls.Add(this.buttonHuy);
             this.Controls.Add(this.buttonLưu);
             this.Controls.Add(this.buttonSua);
             this.Controls.Add(this.buttonThem);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBdiem);
+            this.Controls.Add(this.TBtenSV);
+            this.Controls.Add(this.TBmaSV);
             this.Controls.Add(this.labelDiem);
             this.Controls.Add(this.labelSinhVien);
             this.Controls.Add(this.labelMaSV);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhapDiem";
+            this.Load += new System.EventHandler(this.NhapDiem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,14 +263,14 @@
         private System.Windows.Forms.Label labelMaSV;
         private System.Windows.Forms.Label labelSinhVien;
         private System.Windows.Forms.Label labelDiem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBmaSV;
+        private System.Windows.Forms.TextBox TBtenSV;
+        private System.Windows.Forms.TextBox TBdiem;
         private System.Windows.Forms.Button buttonThem;
         private System.Windows.Forms.Button buttonSua;
         private System.Windows.Forms.Button buttonLưu;
         private System.Windows.Forms.Button buttonHuy;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diem;

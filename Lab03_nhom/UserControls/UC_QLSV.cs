@@ -11,7 +11,7 @@ namespace Lab03_nhom.UserControls
 {
     public partial class UC_QLSV : UserControl
     {
-        String strConn = @"Data Source=LAPTOP-5M61K3MD\SQLEXPRESS;Initial Catalog=QLSV_BOBA;Integrated Security=True;MultipleActiveResultSets=True";
+        String strConn = @"Data Source=DESKTOP-V3AEK98;Initial Catalog=QLSV_BOBA;Integrated Security=True;MultipleActiveResultSets=True";
         SqlConnection sqlconn = null;
         SqlCommand cmd;
         public static String  MANV,MALOP;
@@ -56,7 +56,6 @@ namespace Lab03_nhom.UserControls
         {
             dataGridViewSV.DataSource = FetchSinhVien();
         }
-
         private void dataGridViewSV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow dataGridViewRow = dataGridViewSV.Rows[e.RowIndex];
@@ -112,7 +111,7 @@ namespace Lab03_nhom.UserControls
         } 
         private void buttonNhapDiem_Click(object sender, EventArgs e)
         {
-            NhapDiem fNhapDiem = new NhapDiem();
+            NhapDiem fNhapDiem = new NhapDiem(MANV, MALOP);
             fNhapDiem.Show();
         }
 

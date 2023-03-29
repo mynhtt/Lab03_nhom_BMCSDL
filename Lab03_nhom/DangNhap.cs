@@ -12,7 +12,7 @@ namespace Lab03_nhom
 {
     public partial class DangNhap : Form
     {
-        string strConn = @"Data Source=LAPTOP-5M61K3MD\SQLEXPRESS;Initial Catalog=QLSV_BOBA;Integrated Security=True;MultipleActiveResultSets=True";
+        string strConn = @"Data Source=DESKTOP-V3AEK98;Initial Catalog=QLSV_BOBA;Integrated Security=True;MultipleActiveResultSets=True";
         SqlConnection sqlconn = null;
         public DangNhap()
         {
