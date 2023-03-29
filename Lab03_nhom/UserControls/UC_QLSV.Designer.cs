@@ -194,7 +194,8 @@ namespace Lab03_nhom.UserControls
             this.dataGridViewSV.RowHeadersWidth = 51;
             this.dataGridViewSV.RowTemplate.Height = 32;
             this.dataGridViewSV.Size = new System.Drawing.Size(880, 273);
-            this.dataGridViewSV.TabIndex = 13; 
+            this.dataGridViewSV.TabIndex = 13;
+            this.dataGridViewSV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSV_CellMouseClick);
             // 
             // MaSV
             // 
@@ -239,6 +240,7 @@ namespace Lab03_nhom.UserControls
             this.tenLop.Name = "tenLop";
             this.tenLop.Size = new System.Drawing.Size(159, 23);
             this.tenLop.TabIndex = 14;
+            this.tenLop.SelectedIndexChanged += new System.EventHandler(this.tenLop_SelectedIndexChanged);
             // 
             // TbTenDN
             // 

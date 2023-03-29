@@ -160,7 +160,7 @@
             this.dataGridViewQLLH.Size = new System.Drawing.Size(880, 338);
             this.dataGridViewQLLH.TabIndex = 11;
             this.dataGridViewQLLH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseClick);
-            this.dataGridViewQLLH.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseDoubleClick);
+            //this.dataGridViewQLLH.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseDoubleClick);
             // 
             // MALOP
             // 

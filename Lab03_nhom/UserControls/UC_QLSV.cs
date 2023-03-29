@@ -15,6 +15,7 @@ namespace Lab03_nhom.UserControls
         SqlConnection sqlconn = null;
         SqlCommand cmd;
         public static String  MANV,MALOP;
+        
         public UC_QLSV()
         {
             InitializeComponent();
@@ -28,13 +29,12 @@ namespace Lab03_nhom.UserControls
             frm_load();
         }
         private void frm_load()
-        {
-            dataGridViewSV_List(); 
+        { 
             tenLop.DisplayMember = "TENLOP";
-            tenLop.DataSource = FetchNameLOP();
-            SoluongSV.Text = FetchSoLuongSinhVien(MALOP).ToString();
-            SoluongSV.ReadOnly = true;
-            TbMaSV.ReadOnly = true; 
+            tenLop.DataSource = FetchNameLOP(); 
+            
+            TbMaSV.ReadOnly = true;
+            dataGridViewSV_List();
         }
         private DataTable FetchSinhVien()
         {
@@ -57,7 +57,7 @@ namespace Lab03_nhom.UserControls
             dataGridViewSV.DataSource = FetchSinhVien();
         }
 
-        private void dgvSinhVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridViewSV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow dataGridViewRow = dataGridViewSV.Rows[e.RowIndex];
             DateTime Datetime = Convert.ToDateTime(dataGridViewRow.Cells[2].Value.ToString());
@@ -148,12 +148,12 @@ namespace Lab03_nhom.UserControls
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.Add("MASV", SqlDbType.VarChar, 50).Value = MaSV;
-                cmd.Parameters.Add("HOTEN", SqlDbType.NVarChar, 50).Value = HoTen;
-                cmd.Parameters.Add("NGAYSINH", SqlDbType.DateTime).Value = NgaySinh;
-                cmd.Parameters.Add("DIACHI", SqlDbType.NVarChar, 100).Value = DiaChi;
-                cmd.Parameters.Add("MALOP", SqlDbType.VarChar, 50).Value = MALOP;
-                cmd.Parameters.Add("TENDN", SqlDbType.VarChar, 50).Value = TenDN;
+                cmd.Parameters.Add("@MASV", SqlDbType.VarChar, 50).Value = MaSV;
+                cmd.Parameters.Add("@HOTEN", SqlDbType.NVarChar, 50).Value = HoTen;
+                cmd.Parameters.Add("@NGAYSINH", SqlDbType.DateTime).Value = NgaySinh;
+                cmd.Parameters.Add("@DIACHI", SqlDbType.NVarChar, 100).Value = DiaChi;
+                cmd.Parameters.Add("@MALOP", SqlDbType.VarChar, 50).Value = MALOP;
+                cmd.Parameters.Add("@TENDN", SqlDbType.VarChar, 50).Value = TenDN;
                 cmd.ExecuteReader();
                 frm_load();
             }
@@ -195,6 +195,28 @@ namespace Lab03_nhom.UserControls
                 return 0;
             }
         }
+
+        private void tenLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /////// 
+            var ClassName = tenLop.Text.Trim();
+            SqlCommand cmd_check = new SqlCommand("SP_DSLOP", sqlconn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd_check.Parameters.Add("@TENLOP", SqlDbType.NVarChar,100).Value = ClassName;
+            SqlDataReader check_MLop = cmd_check.ExecuteReader();  
+            if (check_MLop.Read())
+            {
+                UC_QLSV.MALOP = check_MLop[0].ToString();
+                dataGridViewSV_List();
+                SoluongSV.Text = FetchSoLuongSinhVien(MALOP).ToString();
+                SoluongSV.ReadOnly = true;
+            }
+            
+            ////////////
+        }
+
         private void UC_QLSV_MouseClick(object sender, MouseEventArgs e)
         {
             TbHoTen.ReadOnly = false;
