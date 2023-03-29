@@ -78,7 +78,7 @@ namespace Lab03_nhom.UserControls
         //    this.Show();
         //}
 
-        private void buttonQLSV_Click(object sender, EventArgs e)
+        private void UC_QLLH_Click(object sender, EventArgs e)
         {
             textClassId.Text = "";
             textClassId.ReadOnly = false;
@@ -110,13 +110,13 @@ namespace Lab03_nhom.UserControls
             {
                 try
                 {
-                    var tenlop = textClassId.Text.Trim();
+                    var tenlop = textClassName.Text.Trim();
                     var tennv = CBNhanVien.Text.Trim();
                     if (sqlconn.State == ConnectionState.Closed)
                     {
                         sqlconn.Open();
                     }
-                    cmd = new SqlCommand("SP_UPD_LOP", sqlconn)
+                    cmd = new SqlCommand("SP_UPDATE_LOP", sqlconn)
                     {
                         CommandType = CommandType.StoredProcedure
                     };

@@ -65,8 +65,7 @@ namespace Lab03_nhom
                 if (kq_NV.Read())
                 {
                     string MANV = kq_NV[1].ToString();
-
-                    MessageBox.Show("Đăng nhập thành công tài khoản nhân viên " + kq_NV[0], "Thông Báo");
+                        
                     Form1 frmManagerStudent = new Form1(); 
                     //= new frmManagerClass(MANV, MatKhau); 
                     this.Hide();

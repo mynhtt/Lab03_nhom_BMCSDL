@@ -171,9 +171,9 @@
             // 
             // TENLOP
             // 
-            this.TENLOP.DataPropertyName = "TENLOP";
             this.TENLOP.HeaderText = "Tên lớp";
-            this.TENLOP.MinimumWidth = 6;
+            this.TENLOP.MinimumWidth = 6; 
+            this.TENLOP.DataPropertyName = "TENLOP";
             this.TENLOP.Name = "TENLOP";
             this.TENLOP.ReadOnly = true;
             // 
@@ -204,6 +204,7 @@
             this.Name = "UC_QLLH";
             this.Size = new System.Drawing.Size(880, 438);
             this.Load += new System.EventHandler(this.dGVSinhVien_load);
+            this.Click += new System.EventHandler(this.UC_QLLH_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLLH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
