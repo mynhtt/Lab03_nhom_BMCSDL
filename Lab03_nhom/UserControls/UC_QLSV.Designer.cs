@@ -1,16 +1,12 @@
-﻿namespace Lab03_nhom.UserControls
+﻿using System;
+using System.Data.SqlClient;
+
+namespace Lab03_nhom.UserControls
 {
     partial class UC_QLSV
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -30,7 +26,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,14 +42,14 @@
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tenLop = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,16 +72,6 @@
             this.label2.Size = new System.Drawing.Size(73, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số sinh viên:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(578, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nhân viên:";
             // 
             // label4
             // 
@@ -151,7 +136,7 @@
             // buttonSua
             // 
             this.buttonSua.Location = new System.Drawing.Point(604, 54);
-            this.buttonSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(118, 20);
             this.buttonSua.TabIndex = 9;
@@ -161,17 +146,18 @@
             // buttonLuu
             // 
             this.buttonLuu.Location = new System.Drawing.Point(738, 54);
-            this.buttonLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLuu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLuu.Name = "buttonLuu";
             this.buttonLuu.Size = new System.Drawing.Size(121, 20);
             this.buttonLuu.TabIndex = 10;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+
             // 
             // buttonNhapDiem
             // 
             this.buttonNhapDiem.Location = new System.Drawing.Point(604, 95);
-            this.buttonNhapDiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNhapDiem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNhapDiem.Name = "buttonNhapDiem";
             this.buttonNhapDiem.Size = new System.Drawing.Size(118, 20);
             this.buttonNhapDiem.TabIndex = 11;
@@ -182,7 +168,7 @@
             // buttonTaiLai
             // 
             this.buttonTaiLai.Location = new System.Drawing.Point(738, 95);
-            this.buttonTaiLai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTaiLai.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTaiLai.Name = "buttonTaiLai";
             this.buttonTaiLai.Size = new System.Drawing.Size(121, 20);
             this.buttonTaiLai.TabIndex = 12;
@@ -201,7 +187,7 @@
             this.TenDN});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 165);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 32;
@@ -238,28 +224,19 @@
             this.TenDN.MinimumWidth = 6;
             this.TenDN.Name = "TenDN";
             // 
-            // comboBox1
+            // tenLop
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 7);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 23);
-            this.comboBox1.TabIndex = 14;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(654, 3);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(205, 23);
-            this.comboBox2.TabIndex = 15;
+            this.tenLop.FormattingEnabled = true;
+            this.tenLop.Location = new System.Drawing.Point(157, 7);
+            this.tenLop.Margin = new System.Windows.Forms.Padding(2);
+            this.tenLop.Name = "tenLop";
+            this.tenLop.Size = new System.Drawing.Size(159, 23);
+            this.tenLop.TabIndex = 14;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(157, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 23);
             this.textBox1.TabIndex = 16;
@@ -267,7 +244,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(157, 136);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(159, 23);
             this.textBox2.TabIndex = 17;
@@ -275,7 +252,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(411, 4);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(159, 23);
             this.textBox3.TabIndex = 18;
@@ -283,7 +260,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(411, 91);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(159, 23);
             this.textBox4.TabIndex = 19;
@@ -291,7 +268,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(411, 136);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(159, 23);
             this.textBox5.TabIndex = 20;
@@ -299,23 +276,31 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(411, 53);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(159, 23);
-            this.dateTimePicker1.TabIndex = 21; 
+            this.dateTimePicker1.TabIndex = 21;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(157, 53);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(159, 23);
+            this.textBox6.TabIndex = 22;
             // 
             // UC_QLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tenLop);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonTaiLai);
             this.Controls.Add(this.buttonNhapDiem);
@@ -327,10 +312,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_QLSV";
             this.Size = new System.Drawing.Size(880, 438);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -343,7 +327,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -360,13 +343,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDN;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox tenLop;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
