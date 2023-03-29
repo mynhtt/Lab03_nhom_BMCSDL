@@ -166,7 +166,7 @@ namespace Lab03_nhom.UserControls
             {
                 try
                 {
-                    var tenlop = textClassId.Text.Trim();
+                    var tenlop = textClassName.Text.Trim();
                     var tennv = CBNhanVien.Text.Trim();
                     if (sqlconn.State == ConnectionState.Closed)
                     {
