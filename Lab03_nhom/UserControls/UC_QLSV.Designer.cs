@@ -138,7 +138,7 @@ namespace Lab03_nhom.UserControls
             this.buttonSua.Location = new System.Drawing.Point(604, 54);
             this.buttonSua.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSua.Name = "buttonSua";
-            this.buttonSua.Size = new System.Drawing.Size(118, 20);
+            this.buttonSua.Size = new System.Drawing.Size(118, 25);
             this.buttonSua.TabIndex = 9;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@ namespace Lab03_nhom.UserControls
             this.buttonLuu.Location = new System.Drawing.Point(738, 54);
             this.buttonLuu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLuu.Name = "buttonLuu";
-            this.buttonLuu.Size = new System.Drawing.Size(121, 20);
+            this.buttonLuu.Size = new System.Drawing.Size(121, 25);
             this.buttonLuu.TabIndex = 10;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@ namespace Lab03_nhom.UserControls
             this.buttonNhapDiem.Location = new System.Drawing.Point(604, 95);
             this.buttonNhapDiem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNhapDiem.Name = "buttonNhapDiem";
-            this.buttonNhapDiem.Size = new System.Drawing.Size(118, 20);
+            this.buttonNhapDiem.Size = new System.Drawing.Size(118, 25);
             this.buttonNhapDiem.TabIndex = 11;
             this.buttonNhapDiem.Text = "Nhập điểm";
             this.buttonNhapDiem.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@ namespace Lab03_nhom.UserControls
             this.buttonTaiLai.Location = new System.Drawing.Point(738, 95);
             this.buttonTaiLai.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTaiLai.Name = "buttonTaiLai";
-            this.buttonTaiLai.Size = new System.Drawing.Size(121, 20);
+            this.buttonTaiLai.Size = new System.Drawing.Size(121, 25);
             this.buttonTaiLai.TabIndex = 12;
             this.buttonTaiLai.Text = "Tải lại";
             this.buttonTaiLai.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@ namespace Lab03_nhom.UserControls
             this.dataGridViewSV.RowHeadersWidth = 51;
             this.dataGridViewSV.RowTemplate.Height = 32;
             this.dataGridViewSV.Size = new System.Drawing.Size(880, 273);
-            this.dataGridViewSV.TabIndex = 13;
+            this.dataGridViewSV.TabIndex = 13; 
             // 
             // MaSV
             // 

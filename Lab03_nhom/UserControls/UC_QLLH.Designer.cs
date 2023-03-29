@@ -160,6 +160,7 @@
             this.dataGridViewQLLH.Size = new System.Drawing.Size(880, 338);
             this.dataGridViewQLLH.TabIndex = 11;
             this.dataGridViewQLLH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseClick);
+            this.dataGridViewQLLH.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLLH_CellMouseDoubleClick);
             // 
             // MALOP
             // 
@@ -223,7 +224,7 @@
         private System.Windows.Forms.Button buttonSua;
         private System.Windows.Forms.Button buttonXoa;
         private System.Windows.Forms.Button buttonTaiLai;
-        private System.Windows.Forms.DataGridView dataGridViewQLLH;
+        public System.Windows.Forms.DataGridView dataGridViewQLLH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;

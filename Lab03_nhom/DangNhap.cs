@@ -63,8 +63,7 @@ namespace Lab03_nhom
                 }
                 using SqlDataReader kq_NV = cmd_NV.ExecuteReader();
                 if (kq_NV.Read())
-                {
-                    string MANV = kq_NV[1].ToString();
+                {   UC_QLSV.MANV = kq_NV[1].ToString();
                         
                     Form1 frmManagerStudent = new Form1(); 
                     //= new frmManagerClass(MANV, MatKhau); 

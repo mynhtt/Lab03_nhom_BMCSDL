@@ -14,6 +14,7 @@ namespace Lab03_nhom.UserControls
         String strConn = @"Data Source=LAPTOP-5M61K3MD\SQLEXPRESS;Initial Catalog=QLSV_BOBA;Integrated Security=True;MultipleActiveResultSets=True";
         SqlConnection sqlconn = null;
         SqlCommand cmd;
+        public static String  MANV,MALOP;
         public UC_QLSV()
         {
             InitializeComponent();
@@ -104,6 +105,7 @@ namespace Lab03_nhom.UserControls
             {
                 CommandType = CommandType.StoredProcedure
             };
+            cmd.Parameters.Add("MANV", SqlDbType.VarChar, 20).Value = MANV;
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             sqlDataAdapter.Fill(dt);
             return dt;
@@ -142,7 +144,7 @@ namespace Lab03_nhom.UserControls
 
             if (MatKhau == "")
             {
-                cmd = new SqlCommand("SP_UPD_SV_NO_PASSWORD", sqlconn)
+                cmd = new SqlCommand("SP_UPDATESV_NOPASSWORD", sqlconn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -157,7 +159,7 @@ namespace Lab03_nhom.UserControls
             }
             else
             {
-                cmd = new SqlCommand("SP_UPD_SV_PASSWORD", sqlconn)
+                cmd = new SqlCommand("SP_UPDATESV_PASSWORD", sqlconn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };

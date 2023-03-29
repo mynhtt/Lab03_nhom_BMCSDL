@@ -67,16 +67,12 @@ namespace Lab03_nhom.UserControls
             sqlDataAdapter.Fill(dt);
             return dt;
         }
-        //private void dGVSinhVien_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    if (e.RowIndex == -1) return;
-        //    DataGridViewRow dataGridViewRow = dGVLop.Rows[e.RowIndex];
-        //    string MALOP = dataGridViewRow.Cells[0].Value.ToString();
-        //    frmManagerStudent frmManagerStudent = new frmManagerStudent(MANV, MALOP, MATKHAU);
-        //    this.Hide();
-        //    frmManagerStudent.ShowDialog();
-        //    this.Show();
-        //}
+        private void dataGridViewQLLH_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            DataGridViewRow dataGridViewRow = dataGridViewQLLH.Rows[e.RowIndex];
+            UC_QLSV.MALOP = dataGridViewRow.Cells[0].Value.ToString();
+        }
 
         private void UC_QLLH_Click(object sender, EventArgs e)
         {
