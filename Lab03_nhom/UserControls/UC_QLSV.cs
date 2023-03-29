@@ -32,7 +32,6 @@ namespace Lab03_nhom.UserControls
         { 
             tenLop.DisplayMember = "TENLOP";
             tenLop.DataSource = FetchNameLOP(); 
-            
             TbMaSV.ReadOnly = true;
             dataGridViewSV_List();
         }
@@ -155,7 +154,7 @@ namespace Lab03_nhom.UserControls
                 cmd.Parameters.Add("@MALOP", SqlDbType.VarChar, 50).Value = MALOP;
                 cmd.Parameters.Add("@TENDN", SqlDbType.VarChar, 50).Value = TenDN;
                 cmd.ExecuteReader();
-                frm_load();
+                dataGridViewSV_List();
             }
             else
             {
@@ -171,7 +170,7 @@ namespace Lab03_nhom.UserControls
                 cmd.Parameters.Add("TENDN", SqlDbType.VarChar, 50).Value = TenDN;
                 cmd.Parameters.Add("MATKHAU", SqlDbType.VarChar, 50).Value = MatKhau;
                 cmd.ExecuteReader();
-                frm_load();
+                dataGridViewSV_List();
             }
         }
         private int FetchSoLuongSinhVien(string Malop)
