@@ -36,21 +36,21 @@ namespace Lab03_nhom.UserControls
             this.buttonLuu = new System.Windows.Forms.Button();
             this.buttonNhapDiem = new System.Windows.Forms.Button();
             this.buttonTaiLai = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSV = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLop = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TbTenDN = new System.Windows.Forms.TextBox();
+            this.TbMatKhau = new System.Windows.Forms.TextBox();
+            this.SoluongSV = new System.Windows.Forms.TextBox();
+            this.TbHoTen = new System.Windows.Forms.TextBox();
+            this.TbDiaChi = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TbMaSV = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,6 +142,7 @@ namespace Lab03_nhom.UserControls
             this.buttonSua.TabIndex = 9;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonLuu
             // 
@@ -152,7 +153,7 @@ namespace Lab03_nhom.UserControls
             this.buttonLuu.TabIndex = 10;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
-
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonNhapDiem
             // 
@@ -174,52 +175,58 @@ namespace Lab03_nhom.UserControls
             this.buttonTaiLai.TabIndex = 12;
             this.buttonTaiLai.Text = "Tải lại";
             this.buttonTaiLai.UseVisualStyleBackColor = true;
+            this.buttonTaiLai.Click += new System.EventHandler(this.buttonTaiLai_Click);
             // 
-            // dataGridView1
+            // dataGridViewSV
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewSV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
             this.HoTen,
             this.NgaySinh,
             this.DiaChi,
             this.TenDN});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 165);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 32;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 273);
-            this.dataGridView1.TabIndex = 13;
+            this.dataGridViewSV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewSV.Location = new System.Drawing.Point(0, 165);
+            this.dataGridViewSV.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSV.Name = "dataGridViewSV";
+            this.dataGridViewSV.RowHeadersWidth = 51;
+            this.dataGridViewSV.RowTemplate.Height = 32;
+            this.dataGridViewSV.Size = new System.Drawing.Size(880, 273);
+            this.dataGridViewSV.TabIndex = 13;
             // 
             // MaSV
             // 
+            this.MaSV.DataPropertyName = "MASV";
             this.MaSV.HeaderText = "Mã sinh viên";
             this.MaSV.MinimumWidth = 6;
             this.MaSV.Name = "MaSV";
             // 
             // HoTen
             // 
+            this.HoTen.DataPropertyName = "HOTEN";
             this.HoTen.HeaderText = "Họ tên";
             this.HoTen.MinimumWidth = 6;
             this.HoTen.Name = "HoTen";
             // 
             // NgaySinh
             // 
+            this.NgaySinh.DataPropertyName = "NGAYSINH";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.MinimumWidth = 6;
             this.NgaySinh.Name = "NgaySinh";
             // 
             // DiaChi
             // 
+            this.DiaChi.DataPropertyName = "DIACHI";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 6;
             this.DiaChi.Name = "DiaChi";
             // 
             // TenDN
             // 
+            this.TenDN.DataPropertyName = "TENDN";
             this.TenDN.HeaderText = "Tên đăng nhập";
             this.TenDN.MinimumWidth = 6;
             this.TenDN.Name = "TenDN";
@@ -233,45 +240,45 @@ namespace Lab03_nhom.UserControls
             this.tenLop.Size = new System.Drawing.Size(159, 23);
             this.tenLop.TabIndex = 14;
             // 
-            // textBox1
+            // TbTenDN
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 23);
-            this.textBox1.TabIndex = 16;
+            this.TbTenDN.Location = new System.Drawing.Point(157, 91);
+            this.TbTenDN.Margin = new System.Windows.Forms.Padding(2);
+            this.TbTenDN.Name = "TbTenDN";
+            this.TbTenDN.Size = new System.Drawing.Size(159, 23);
+            this.TbTenDN.TabIndex = 16;
             // 
-            // textBox2
+            // TbMatKhau
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 136);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 23);
-            this.textBox2.TabIndex = 17;
+            this.TbMatKhau.Location = new System.Drawing.Point(157, 136);
+            this.TbMatKhau.Margin = new System.Windows.Forms.Padding(2);
+            this.TbMatKhau.Name = "TbMatKhau";
+            this.TbMatKhau.Size = new System.Drawing.Size(159, 23);
+            this.TbMatKhau.TabIndex = 17;
             // 
-            // textBox3
+            // SoluongSV
             // 
-            this.textBox3.Location = new System.Drawing.Point(411, 4);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 23);
-            this.textBox3.TabIndex = 18;
+            this.SoluongSV.Location = new System.Drawing.Point(411, 4);
+            this.SoluongSV.Margin = new System.Windows.Forms.Padding(2);
+            this.SoluongSV.Name = "SoluongSV";
+            this.SoluongSV.Size = new System.Drawing.Size(159, 23);
+            this.SoluongSV.TabIndex = 18;
             // 
-            // textBox4
+            // TbHoTen
             // 
-            this.textBox4.Location = new System.Drawing.Point(411, 91);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 23);
-            this.textBox4.TabIndex = 19;
+            this.TbHoTen.Location = new System.Drawing.Point(411, 91);
+            this.TbHoTen.Margin = new System.Windows.Forms.Padding(2);
+            this.TbHoTen.Name = "TbHoTen";
+            this.TbHoTen.Size = new System.Drawing.Size(159, 23);
+            this.TbHoTen.TabIndex = 19;
             // 
-            // textBox5
+            // TbDiaChi
             // 
-            this.textBox5.Location = new System.Drawing.Point(411, 136);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(159, 23);
-            this.textBox5.TabIndex = 20;
+            this.TbDiaChi.Location = new System.Drawing.Point(411, 136);
+            this.TbDiaChi.Margin = new System.Windows.Forms.Padding(2);
+            this.TbDiaChi.Name = "TbDiaChi";
+            this.TbDiaChi.Size = new System.Drawing.Size(159, 23);
+            this.TbDiaChi.TabIndex = 20;
             // 
             // dateTimePicker1
             // 
@@ -281,27 +288,27 @@ namespace Lab03_nhom.UserControls
             this.dateTimePicker1.Size = new System.Drawing.Size(159, 23);
             this.dateTimePicker1.TabIndex = 21;
             // 
-            // textBox6
+            // TbMaSV
             // 
-            this.textBox6.Location = new System.Drawing.Point(157, 53);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(159, 23);
-            this.textBox6.TabIndex = 22;
+            this.TbMaSV.Location = new System.Drawing.Point(157, 53);
+            this.TbMaSV.Margin = new System.Windows.Forms.Padding(2);
+            this.TbMaSV.Name = "TbMaSV";
+            this.TbMaSV.Size = new System.Drawing.Size(159, 23);
+            this.TbMaSV.TabIndex = 22;
             // 
             // UC_QLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TbMaSV);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TbDiaChi);
+            this.Controls.Add(this.TbHoTen);
+            this.Controls.Add(this.SoluongSV);
+            this.Controls.Add(this.TbMatKhau);
+            this.Controls.Add(this.TbTenDN);
             this.Controls.Add(this.tenLop);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewSV);
             this.Controls.Add(this.buttonTaiLai);
             this.Controls.Add(this.buttonNhapDiem);
             this.Controls.Add(this.buttonLuu);
@@ -317,7 +324,9 @@ namespace Lab03_nhom.UserControls
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_QLSV";
             this.Size = new System.Drawing.Size(880, 438);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UC_QLSV_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UC_QLSV_MouseClick);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,19 +346,19 @@ namespace Lab03_nhom.UserControls
         private System.Windows.Forms.Button buttonLuu;
         private System.Windows.Forms.Button buttonNhapDiem;
         private System.Windows.Forms.Button buttonTaiLai;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDN;
         private System.Windows.Forms.ComboBox tenLop;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TbTenDN;
+        private System.Windows.Forms.TextBox TbMatKhau;
+        private System.Windows.Forms.TextBox SoluongSV;
+        private System.Windows.Forms.TextBox TbHoTen;
+        private System.Windows.Forms.TextBox TbDiaChi;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TbMaSV;
     }
 }
