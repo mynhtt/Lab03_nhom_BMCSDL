@@ -43,6 +43,8 @@
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CBTenLop = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDiem)).BeginInit();
             this.SuspendLayout();
@@ -142,19 +144,19 @@
             // 
             // buttonSua
             // 
-            this.buttonSua.Location = new System.Drawing.Point(378, 127);
+            this.buttonSua.Location = new System.Drawing.Point(430, 100);
             this.buttonSua.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(73, 28);
             this.buttonSua.TabIndex = 8;
-            this.buttonSua.Text = "Sửa";
+            this.buttonSua.Text = "Cập Nhập";
             this.buttonSua.UseVisualStyleBackColor = true;
             this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonHuy
             // 
             this.buttonHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonHuy.Location = new System.Drawing.Point(494, 127);
+            this.buttonHuy.Location = new System.Drawing.Point(525, 100);
             this.buttonHuy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(73, 28);
@@ -199,17 +201,38 @@
             // 
             // Diem
             // 
-            this.Diem.DataPropertyName = "Diem";
+            this.Diem.DataPropertyName = "DiemThi";
             this.Diem.HeaderText = "Điểm";
             this.Diem.MinimumWidth = 6;
             this.Diem.Name = "Diem";
             this.Diem.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(374, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Tên Lớp:";
+            // 
+            // CBTenLop
+            // 
+            this.CBTenLop.FormattingEnabled = true;
+            this.CBTenLop.Location = new System.Drawing.Point(430, 62);
+            this.CBTenLop.Name = "CBTenLop";
+            this.CBTenLop.Size = new System.Drawing.Size(168, 23);
+            this.CBTenLop.TabIndex = 13;
+            this.CBTenLop.SelectedIndexChanged += new System.EventHandler(this.CBTenLop_SelectedIndexChanged);
             // 
             // NhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 367);
+            this.Controls.Add(this.CBTenLop);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewDiem);
             this.Controls.Add(this.buttonHuy);
             this.Controls.Add(this.buttonSua);
@@ -252,5 +275,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox CBTenLop;
     }
 }

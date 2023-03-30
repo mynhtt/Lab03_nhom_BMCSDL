@@ -154,7 +154,8 @@ namespace Lab03_nhom.UserControls
                 cmd.Parameters.Add("@MALOP", SqlDbType.VarChar, 50).Value = MALOP;
                 cmd.Parameters.Add("@TENDN", SqlDbType.VarChar, 50).Value = TenDN;
                 cmd.ExecuteReader();
-                frm_load();
+                MessageBox.Show("Lưu Thành Công", "Thông Báo");
+                dataGridViewSV_List();
             }
             else
             {
@@ -170,7 +171,8 @@ namespace Lab03_nhom.UserControls
                 cmd.Parameters.Add("TENDN", SqlDbType.VarChar, 50).Value = TenDN;
                 cmd.Parameters.Add("MATKHAU", SqlDbType.VarChar, 50).Value = MatKhau;
                 cmd.ExecuteReader();
-                frm_load();
+                MessageBox.Show("Lưu Thành Công", "Thông Báo");
+                dataGridViewSV_List();
             }
         }
         private int FetchSoLuongSinhVien(string Malop)
@@ -197,7 +199,6 @@ namespace Lab03_nhom.UserControls
 
         private void tenLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /////// 
             var ClassName = tenLop.Text.Trim();
             SqlCommand cmd_check = new SqlCommand("SP_DSLOP", sqlconn)
             {
@@ -212,8 +213,6 @@ namespace Lab03_nhom.UserControls
                 SoluongSV.Text = FetchSoLuongSinhVien(MALOP).ToString();
                 SoluongSV.ReadOnly = true;
             }
-            
-            ////////////
         }
 
         private void UC_QLSV_MouseClick(object sender, MouseEventArgs e)

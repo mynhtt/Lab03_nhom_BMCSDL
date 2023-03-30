@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab03_nhom.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,11 +24,8 @@ namespace Lab03_nhom
             {
                 sqlconn = new SqlConnection(strConn);
             }
-            MANV = "NV01";
-            MALOP = "KH01";
-
-            //MANV = maNV;
-            //MALOP = maLop;
+            MANV = maNV;
+            MALOP = maLop;
         }
         private void QLDIEM_Click(object sender, EventArgs e)
         {
@@ -45,6 +43,9 @@ namespace Lab03_nhom
         }
         private void frm_load()
         {
+            CBTenLop.DisplayMember = "TENLOP";
+            CBTenLop.DataSource = FetchNameLOP();
+
             TBmaSV.ReadOnly = true;
             TBtenSV.ReadOnly = true;
             dataGridViewSV_List();
@@ -52,6 +53,22 @@ namespace Lab03_nhom
         private void dataGridViewSV_List()
         {
             dataGridViewDiem.DataSource = FetchNhapDiem();
+        }
+        private DataTable FetchNameLOP()
+        {
+            DataTable dt = new DataTable();
+            if (sqlconn.State == ConnectionState.Closed)
+            {
+                sqlconn.Open();
+            }
+            cmd = new SqlCommand("SP_SEL_NAME_LOP", sqlconn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add("MANV", SqlDbType.VarChar, 20).Value = MANV;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            sqlDataAdapter.Fill(dt);
+            return dt;
         }
         private DataTable FetchNhapDiem()
         {
@@ -71,7 +88,6 @@ namespace Lab03_nhom
             sqlDataAdapter.Fill(dt);
             return dt;
         }
-
         private void iconButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -98,6 +114,7 @@ namespace Lab03_nhom
             cmd.Parameters.Add("MASV", SqlDbType.VarChar, 20).Value = maSV;
             cmd.Parameters.Add("DIEM", SqlDbType.VarChar, 20).Value = diem;
             cmd.ExecuteReader();
+            MessageBox.Show("Cập Nhập Thành Công", "Thông Báo");
             dataGridViewSV_List();
         }
         private void buttonHuy_Click(object sender, EventArgs e)
@@ -107,6 +124,21 @@ namespace Lab03_nhom
             TBtenSV.Text = "";
         }
 
+        private void CBTenLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ClassName = CBTenLop.Text.Trim();
+            SqlCommand cmd_check = new SqlCommand("SP_DSLOP", sqlconn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd_check.Parameters.Add("@TENLOP", SqlDbType.NVarChar, 100).Value = ClassName;
+            SqlDataReader check_MLop = cmd_check.ExecuteReader();
+            if (check_MLop.Read())
+            {
+                MALOP = check_MLop[0].ToString();
+                dataGridViewSV_List();
+            }
+        }
 
         private void dataGridViewDiem_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
