@@ -25,20 +25,33 @@ namespace Lab03_nhom
             }
             MANV = "NV01";
             MALOP = "KH01";
+
             //MANV = maNV;
             //MALOP = maLop;
         }
-        private void NhapDiem_Load(object sender, EventArgs e)
+        private void QLDIEM_Click(object sender, EventArgs e)
+        {
+            TBdiem.Text = "";
+            TBmaSV.Text = "";
+            TBtenSV.Text = "";
+
+            TBmaSV.ReadOnly = true;
+            TBtenSV.ReadOnly = true;
+        }
+
+        private void QLDIEM_Load(object sender, EventArgs e)
         {
             frm_load();
         }
         private void frm_load()
         {
-            //tenLop.DisplayMember = "TENLOP";
-            //tenLop.DataSource = FetchNameLOP();
-
             TBmaSV.ReadOnly = true;
+            TBtenSV.ReadOnly = true;
             dataGridViewSV_List();
+        }
+        private void dataGridViewSV_List()
+        {
+            dataGridViewDiem.DataSource = FetchNhapDiem();
         }
         private DataTable FetchNhapDiem()
         {
@@ -58,32 +71,50 @@ namespace Lab03_nhom
             sqlDataAdapter.Fill(dt);
             return dt;
         }
-        private void dataGridViewSV_List()
-        {
-            dataGridViewDiem.DataSource = FetchNhapDiem();
-        }
+
         private void iconButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        private void buttonSua_Click(object sender, EventArgs e)
+        {
+            var diem = TBdiem.Text.Trim();
+            var maSV = TBmaSV.Text.Trim();
+            if (maSV == "")
+            {
+                MessageBox.Show("Hãy Chọn Sinh Viên", "Thông Báo");
+                return;
+            }
+            if (diem == "")
+            {
+                MessageBox.Show("Điểm Chưa Được Nhập", "Thông Báo");
+                return;
+            }
+            cmd = new SqlCommand("SP_UPD_DIEM", sqlconn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add("MALOP", SqlDbType.VarChar, 20).Value = MALOP;
+            cmd.Parameters.Add("MASV", SqlDbType.VarChar, 20).Value = maSV;
+            cmd.Parameters.Add("DIEM", SqlDbType.VarChar, 20).Value = diem;
+            cmd.ExecuteReader();
+            dataGridViewSV_List();
+        }
+        private void buttonHuy_Click(object sender, EventArgs e)
+        {
+            TBdiem.Text = "";
+            TBmaSV.Text = "";
+            TBtenSV.Text = "";
+        }
 
 
         private void dataGridViewDiem_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             DataGridViewRow dataGridViewRow = dataGridViewDiem.Rows[e.RowIndex];
-            //DateTime Datetime = Convert.ToDateTime(dataGridViewRow.Cells[2].Value.ToString());
-            String maSV = dataGridViewRow.Cells[0].Value.ToString();
-            String hoTen = dataGridViewRow.Cells[1].Value.ToString();
-            String diem = dataGridViewRow.Cells[2].Value.ToString();
-
-            TBmaSV.Text = maSV;
-            TBtenSV.Text = hoTen;
-            TBdiem.Text = diem;
-
-            TBmaSV.ReadOnly = true;
-            TBtenSV.ReadOnly = true;
-            TBdiem.ReadOnly = true;
+            TBmaSV.Text = dataGridViewRow.Cells[0].Value.ToString();
+            TBtenSV.Text = dataGridViewRow.Cells[1].Value.ToString();
+            TBdiem.Text = dataGridViewRow.Cells[2].Value.ToString();
         }
 
     }
