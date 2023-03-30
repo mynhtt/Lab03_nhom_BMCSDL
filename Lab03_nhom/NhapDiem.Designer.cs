@@ -45,6 +45,8 @@
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CBTenLop = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -154,12 +156,17 @@
             // 
             // buttonSua
             // 
+<<<<<<< Updated upstream
             this.buttonSua.Location = new System.Drawing.Point(569, 72);
             this.buttonSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.buttonSua.Location = new System.Drawing.Point(413, 100);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(73, 19);
             this.buttonSua.TabIndex = 8;
-            this.buttonSua.Text = "Sửa";
+            this.buttonSua.Text = "Cập Nhập";
             this.buttonSua.UseVisualStyleBackColor = true;
             // 
             // buttonLưu
@@ -174,8 +181,14 @@
             // 
             // buttonHuy
             // 
+<<<<<<< Updated upstream
             this.buttonHuy.Location = new System.Drawing.Point(569, 123);
             this.buttonHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.buttonHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonHuy.Location = new System.Drawing.Point(502, 100);
+            this.buttonHuy.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(73, 19);
             this.buttonHuy.TabIndex = 10;
@@ -213,16 +226,45 @@
             // 
             // Diem
             // 
+<<<<<<< Updated upstream
+=======
+            this.Diem.DataPropertyName = "DiemThi";
+>>>>>>> Stashed changes
             this.Diem.HeaderText = "Điểm";
             this.Diem.MinimumWidth = 6;
             this.Diem.Name = "Diem";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(378, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Lớp:";
+            // 
+            // CBTenLop
+            // 
+            this.CBTenLop.FormattingEnabled = true;
+            this.CBTenLop.Location = new System.Drawing.Point(413, 61);
+            this.CBTenLop.Name = "CBTenLop";
+            this.CBTenLop.Size = new System.Drawing.Size(162, 23);
+            this.CBTenLop.TabIndex = 14;
+            this.CBTenLop.SelectedIndexChanged += new System.EventHandler(this.TenLop_SelectedIndexChanged);
             // 
             // NhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 367);
+<<<<<<< Updated upstream
             this.Controls.Add(this.dataGridView1);
+=======
+            this.Controls.Add(this.CBTenLop);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridViewDiem);
+>>>>>>> Stashed changes
             this.Controls.Add(this.buttonHuy);
             this.Controls.Add(this.buttonLưu);
             this.Controls.Add(this.buttonSua);
@@ -266,5 +308,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CBTenLop;
     }
 }
